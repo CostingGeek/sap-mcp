@@ -20,19 +20,21 @@ This repository contains a Python-based solution that enables bidirectional comm
 
 This documentation is written for a Windows environment with administrator rights
 
-## Documentation
+## Reference Documentation
 - [Get started with the Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
 - [Introduction to SAP Graph](https://community.sap.com/t5/technology-blogs-by-sap/part-1-introduction-to-sap-graph/ba-p/13503946)
 
 ## Installation
 
 1. Get the SAP API Key
+
 Log into the [SAP Graph Navigator](https://api.sap.com/graph).
 You will find the API key in your profile, under Settings > API Settings.
 Save that API key as system environment variable "SAP_API_KEY".
 Make sure to restart your machine to load the new environment variable.
 
 3. Set up your environment
+
 Let's follow the [Documentation for Server Developers](https://modelcontextprotocol.io/quickstart/server#importing-packages-and-setting-up-the-instance).
 
 First, let’s install `uv` and set up our Python project and environment:
@@ -69,10 +71,10 @@ Open Claude Studio. Under File > Settings > Developer, click `Edit Config`.
 Edit the file `claude_desktop_config.json` usually located in the %APPDATA%\Claude folder.
 Make sure to replace the `C:\\PATH\\TO\\PARENT\\FOLDER` with your own.
 
-```bash
+```json
 {
     "mcpServers": {
-		    "saptools": {
+        "saptools": {
             "command": "uv",
             "args": [
                 "--directory",
@@ -103,7 +105,7 @@ You should now be ready to chat with your SAP system from Claude with prompts li
 Give me the last 10 sales orders
 What is the average amount of the last 5 sales orders
 ``` 
-This is of course limited at this point, but extensions to this proof-of-concept should support more complex interations,
+This is of course limited at this point, but extensions to this proof-of-concept should support more complex interactions,
 like getting the last sales orders for a given customer.
 
 
@@ -142,5 +144,11 @@ Display ID: SO-123457
 Sold To Party: TechInnovations
 Net Amount: 7500.00 USD
 Created At: 2024-10-13T09:15:00Z
+----------------------------------------
+Order ID: 123458
+Display ID: SO-123458
+Sold To Party: SampleCustomer
+Net Amount: 2500.00 USD
+Created At: 2024-10-14T09:15:00Z
 ----------------------------------------
 ``` 
